@@ -20,7 +20,7 @@ $(document.body).keydown(function() {
 var simulateKeyUp = function(character) {
     //console.log('Leap up gesture: ' + (['left', 'up', 'right', 'down'])[character - 37]);
     var eventObj = document.createEvent("Events");
-    eventObj.initEvent("keypress", true, true);
+    eventObj.initEvent("keyup", true, true);
     eventObj.which = character;
     (document.activeElement || document.body).dispatchEvent(eventObj);
 };
