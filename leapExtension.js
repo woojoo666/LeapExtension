@@ -1,29 +1,23 @@
 var simulateKeyPress = function(character) {
-    //console.log('Leap gesture: ' + (['left', 'up', 'right', 'down'])[character - 37]);
-    var eventObj = document.createEvent("Events");
-    eventObj.initEvent("keydown", true, true);
-    eventObj.which = character;
-    //(document.activeElement || document.body).dispatchEvent(eventObj);
-    setTimeout("simulateKeyUp("+character+")", 50);
+    $(':focus').trigger(jQuery.Event('keydown', {
+        which: character
+    }));
+    setTimeout(function() {
+        $(':focus').trigger(jQuery.Event('keyup', {
+            which: character
+        }));
+    }, 50);
 };
 
 $(document.body).keydown(function() {
     console.log('keydown');
 })
-.keyup(function() {
-    console.log('keyup');
-})
-.keypress(function() {
-    console.log('keypress');
-});
-
-var simulateKeyUp = function(character) {
-    //console.log('Leap up gesture: ' + (['left', 'up', 'right', 'down'])[character - 37]);
-    var eventObj = document.createEvent("Events");
-    eventObj.initEvent("keyup", true, true);
-    eventObj.which = character;
-    (document.activeElement || document.body).dispatchEvent(eventObj);
-};
+    .keyup(function() {
+        console.log('keyup');
+    })
+    .keypress(function() {
+        console.log('keypress');
+    });
 
 $(document).ready(function() {
     simulateKeyPress(37);
