@@ -3,7 +3,7 @@ var simulateKeyPress = function(character) {
     var eventObj = document.createEvent("Events");
     eventObj.initEvent("keydown", true, true);
     eventObj.which = character;
-    (document.activeElement || document.body).dispatchEvent(eventObj);
+    //(document.activeElement || document.body).dispatchEvent(eventObj);
     setTimeout("simulateKeyUp("+character+")", 50);
 };
 
