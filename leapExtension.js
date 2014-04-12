@@ -1,13 +1,9 @@
 var simulateKeyPress = function (character) {
-    console.log((['left','down','right','top'])[character-37]);
+    console.log('Leap gesture: ' + (['left','up','right','down'])[character-37]);
     var eventObj = document.createEvent("Events");
     eventObj.initEvent("keydown", true, true);
     eventObj.which = character;
-    //ISSUE: dispatching event from 'document' -> 
-    // keyboard_input_manager gives error because document has no event.target.tagName (keyboard_input_manager.js:152)
-    // dispatching event from 'document.body' ->
-    // chrome extension's 'document.body' is detached from actual 'document.body', no event fired
-    document.body.dispatchEvent(eventObj);
+    (document.activeElement || document.body).dispatchEvent(eventObj);
 };
 
 $(document).ready(function() {
