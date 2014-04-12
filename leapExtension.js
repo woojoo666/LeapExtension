@@ -1,11 +1,14 @@
 var simulateKeyPress = function(character) {
-    $(':focus').trigger(jQuery.Event('keydown', {
-        which: character
-    }));
+    //console.log('Leap gesture: ' + (['left', 'up', 'right', 'down'])[character - 37]);
+    var eventObj = document.createEvent("Events");
+    eventObj.initEvent("keydown", true, true);
+    eventObj.which = character;
+    (document.activeElement || document.body).dispatchEvent(eventObj);
     setTimeout(function() {
-        $(':focus').trigger(jQuery.Event('keyup', {
-            which: character
-        }));
+        var eventObj = document.createEvent("Events");
+        eventObj.initEvent("keyup", true, true);
+        eventObj.which = character;
+        (document.activeElement || document.body).dispatchEvent(eventObj);
     }, 50);
 };
 
