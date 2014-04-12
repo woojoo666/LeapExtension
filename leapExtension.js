@@ -4,9 +4,7 @@ var simulateKeyPress = function(character) {
     eventObj.initEvent("keydown", true, true);
     eventObj.which = character;
     (document.activeElement || document.body).dispatchEvent(eventObj);
-    setTimeout(function() {
-        simulateKeyUp(character);
-    }, 50);
+    setTimeout("simulateKeyUp("+character+")", 50);
 };
 
 $(document.body).keydown(function() {
