@@ -1,0 +1,3 @@
+BUGS:
+
+sometimes (like on google.com) get error "Uncaught ReferenceError: $ is not defined (leapExtension.js:9)", jQuery not loading cause of dynamic loading?

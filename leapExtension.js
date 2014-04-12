@@ -1,7 +1,7 @@
 var simulateKeyPress = function (character) {
     console.log('Leap gesture: ' + (['left','up','right','down'])[character-37]);
     var eventObj = document.createEvent("Events");
-    eventObj.initEvent("keydown", true, true);
+    eventObj.initEvent("keypress", true, true);
     eventObj.which = character;
     (document.activeElement || document.body).dispatchEvent(eventObj);
 };
