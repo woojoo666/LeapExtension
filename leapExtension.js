@@ -1,4 +1,5 @@
 var simulateKeyPress = function (character) {
+    console.log((['left','down','right','top'])[character-37]);
     var eventObj = document.createEvent("Events");
     eventObj.initEvent("keydown", true, true);
     eventObj.which = character;
@@ -31,7 +32,6 @@ $(document).ready(function() {
         if (Math.abs(g.translation()[0]) > tolerance || Math.abs(g.translation()[1]) > tolerance) {
             var xDir = Math.abs(g.translation()[0]) > tolerance ? (g.translation()[0] > 0 ? -1 : 1) : 0;
             var yDir = Math.abs(g.translation()[1]) > tolerance ? (g.translation()[1] < 0 ? -1 : 1) : 0;
-            console.log(xDir + " " + yDir);
             var dir = 0;
             if (xDir !== 0) {
                 if (xDir > 0) dir = 2;
