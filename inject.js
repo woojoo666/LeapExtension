@@ -1,4 +1,4 @@
-document.body.addEventListener('load', function() {
+$(document).ready(function() { //document.body.addEventListener('body',fn) doesn't work because body is already loaded by the time its called
     var jq = document.createElement('script');
     jq.src = "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js";
     document.body.appendChild(jq);
