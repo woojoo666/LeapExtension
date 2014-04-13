@@ -29,7 +29,6 @@ $(document).ready(function() {
     var ctl = new Leap.Controller({
         enableGestures: true
     });
-    console.log("asdf");
     var swiper = ctl.gesture('swipe');
 
     var tolerance = 80;
@@ -58,4 +57,5 @@ $(document).ready(function() {
         }
     });
     ctl.connect();
+    console.log("loaded leap");
 });

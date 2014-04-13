@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.body.addEventListener('load', function() {
     var jq = document.createElement('script');
     jq.src = "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js";
     document.body.appendChild(jq);
