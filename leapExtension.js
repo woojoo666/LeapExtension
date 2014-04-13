@@ -18,7 +18,7 @@ var simulateKeyPress = function(character) {
     }, 50);
 };
 
-$(document.body).keydown(function() {
+$(document.body).keydown(function(e) {
     console.log(e.target.nodeName + ': keydown');
 })
     .keyup(function(e) {
@@ -29,7 +29,7 @@ $(document.body).keydown(function() {
     });
 
 $(document).ready(function() {
-    simulateKeyPress(37);
+    simulateKeyPress(37); //test left arrow simulate
     var ctl = new Leap.Controller({
         enableGestures: true
     });
