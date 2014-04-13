@@ -1,3 +1,10 @@
+NOTES:
+
+content script doesn't work because the simulated event isn't sent to the actual dom (probably because the content script runs in a sandbox)
+
+leapextension.js is hosted on github
+inject.js injects a script element into the page, which loads leapextension.js
+
 BUGS:
 
 sometimes (like on google.com) get error "Uncaught ReferenceError: $ is not defined (leapExtension.js:9)", jQuery not loading cause of dynamic loading?

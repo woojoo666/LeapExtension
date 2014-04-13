@@ -1,0 +1,13 @@
+{
+    "name": "Leap Extension",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions": ["tabs"],
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["underscore-min.js", "leap-0.4.3.min.js", "jquery-2.1.0.min.js", "inject.js"]
+    }],
+    "web_accessible_resources": [
+        "underscore-min.map"
+    ]
+}
