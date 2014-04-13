@@ -15,13 +15,13 @@ var simulateKeyPress = function(character) {
 };
 
 $(document.body).keydown(function() {
-    console.log('keydown');
+    console.log(e.target.nodeName + ': keydown');
 })
-    .keyup(function() {
-        console.log('keyup');
+    .keyup(function(e) {
+        console.log(e.target.nodeName + ': keyup');
     })
-    .keypress(function() {
-        console.log('keypress');
+    .keypress(function(e) {
+        console.log(e.target.nodeName + ': keypress');
     });
 
 $(document).ready(function() {
