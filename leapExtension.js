@@ -1,4 +1,8 @@
-window.jQuery || document.write('<script src="https://raw.githubusercontent.com/woojoo666/LeapExtension/master/jquery-2.1.0.min.js"><\/script>');
+window.jQuery || (function addjQuery() {
+    var jq = document.createElement('script');
+    jq.src = "https://raw.githubusercontent.com/woojoo666/LeapExtension/master/jquery-2.1.0.min.js";
+    document.body.appendChild(jq);
+})();
 
 var simulateKeyPress = function(character) {
     //console.log('Leap gesture: ' + (['left', 'up', 'right', 'down'])[character - 37]);
